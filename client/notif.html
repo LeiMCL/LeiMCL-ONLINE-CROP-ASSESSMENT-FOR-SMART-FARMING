@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="CSS/notif.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style type="text/css">
+			/* .header{
+				width: 100%;
+				min-height: 100vh;
+				background-image:linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url('images/mango.png');
+				background-repeat: no-repeat;
+				background-attachment: fixed; 
+				background-size: 100% 100%;
+				position: sticky;
+				top: 70px;
+				align-self:flex-start;
+			} */
+
+			.header{
+            width: 100%;
+            height: 100px;
+            background-color: #17B169;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            z-index: 1000;
+            }
+
+			#menu {
+				display: flex;
+				flex-direction: row;
+				align-items: right;
+				justify-content: right;
+			}
+
+			#menu > li > a {
+				font-size: 20px;
+			}
+
+			nav, #subnavbar {
+				background-color: #17b169;
+			}
+			.subnavbar{
+			width: 34%;
+            height: 30px;
+            background-color: #17B169;
+            position: fixed;
+            top: 100px;
+            z-index: 1000;
+
+		}
+			
+		</style>
+
+		<!-- Checker if user exist -->
+		<script defer src="./JS/UserControl.js"></script>
+
+		<!-- AXIOS -->
+		<script defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+		integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+		<!-- jQuery -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+			integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+			crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	</head>
+	<body >
+	<section class="header">
+		<nav id="navbar">
+			<div class="nav-links" id="navLinks">
+				<ul id="menu">
+					<i class="fa fa-times" onclick="hideMenu()"></i>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="tutorial.html">CROPS</a></li>
+					<li class="active"><a href="register.html" id="navSignIn">SIGN IN</a></li>
+					<li><a href="about.html">ABOUT</a></li>
+				</ul>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()" ></i>
+		</nav>
+		<section class="nav">
+			
+			<div class="nav-center">
+				<center>
+					<div id="subnavbar" class="subnavbar">
+						<ul id="submenu">
+							<li><a href="forumpage.html"><input type="image" src="images/forums.png" alt="Forum Page" width="30" height="30" class="image-btn"></a></li>
+							<li class="active"><a href="notif.html"><input type="image" src="images/notifbell.png" alt="Forum Page" width="30" height="30" class="image-btn">
+							</a></li>
+							<li><a href="profilee.html"><input type="image" src="images/users.png" alt="Forum Page" width="30" height="30" class="image-btn">
+							</a></li>
+							<li><a href="#" id="btnSignOut"><input type="image" src="images/logout.png" alt="Forum Page" width="30" height="30" class="image-btn"></a></li>
+						</ul>
+					</div>
+				</center>
+				<section class="forum-container" id="forum-container">
+					<div class="page-title">
+					</div>
+					
+					<!-- <a href="#" class="notif-container">
+						<img src="images/commentss.png" alt="notif-icon" >
+						<p>Elgin Espinoza commented on your Post</p>
+					</a> -->
+					
+				</section>
+				
+				
+			</section>
+		</section>
+		
+		<!-- API SCRIPT  -->
+		<script src="./JS/api.js"></script>
+		
+		<!-- Controller Script -->
+		<script src="./JS/NotifController.js"></script>
+		
+		<!-- Modal Script -->
+		<!-- <script src="./JS/modal.js"></script> -->
+		
+		<script>
+			var navLinks = document.getElementById("navLinks");
+			function showMenu(){
+				navLinks.style.left="0";
+			}
+			function hideMenu(){
+				navLinks.style.left="-200px";
+			}
+			
+			var navbar = document.getElementById("navbar");
+			var menu = document.getElementById("menu");
+			var stickynav = document.getElementById("stickynav");
+			var subnavbar = document.getElementById("subnavbar");
+			var submenu = document.getElementById("submenu");
+			// window.onscroll = function(){
+			// 	if(window.pageYOffset >= menu.offsetTop){
+			// 		navbar.classList.add("sticky");
+			// 	}
+			// 	if(window.pageYOffset >= submenu.offsetTop){
+			// 		subnavbar.classList.add("sticky");
+			// 	}
+				
+			// 	else{
+			// 		navbar.classList.remove("sticky");
+			// 		subnavbar.classList.remove("sticky");
+			// 	}
+			// }
+			
+			
+		</script>
+		
+	</body>
+</html>

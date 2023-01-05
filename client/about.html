@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="CSS/about.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>About Us</title>
+    <style type="text/css">
+      /* .header{
+	width: 100%;
+	min-height: 100vh;
+	background-image:linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url('images/mango.png');
+  	background-repeat: no-repeat;
+  	background-attachment: fixed; 
+  	background-size: 100% 100%;
+	
+	} */
+      #menu {
+        display: flex;
+        flex-direction: row;
+        align-items: right;
+        justify-content: right;
+      }
+
+      #menu > li > a {
+        font-size: 20px;
+      }
+
+      nav {
+        background-color: #17b169;
+      }
+
+      .about-col h1,
+      .about-col p {
+        color: black;
+      }
+    </style>
+
+    <!-- Checker if user exist -->
+    <script src="./JS/UserControl.js"></script>
+  </head>
+  <body>
+    <section class="header">
+      <nav id="navbar">
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+
+          <ul id="menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="tutorial.html">CROPS</a></li>
+            <li><a href="register.html" id="navSignIn">SIGN IN</a></li>
+            <li><a href="#">ABOUT</a></li>
+          </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+      <section class="about-us"></section>
+      <div class="row">
+        <div class="about-col">
+          <h1>About Us</h1>
+          <p>
+            Welcome to Online Crop Assessment for Smart Farming, your number one
+            source for all things about Smart Farming. We're dedicated to
+            providing you great technology in the industry, with a focus on
+            dependability and great customer service.
+          </p>
+          <br />
+
+          <h1>Mission</h1>
+          <p>
+            "At Online Crop Assessment for Smart Farming, our mission is to
+            provide farmers with an efficient and affordable tool for smart
+            farming. Our product is a web-based application that uses satellite
+            imagery and data analysis to help farmers assess crop health and
+            yield potential."
+          </p>
+        </div>
+        <div class="about-col">
+          <img src="images/smart farming.png" height="300px" />
+        </div>
+      </div>
+      <section class="about-team"></section>
+
+      <div class="wrapper">
+        <h1>OUR DEVELOPMENT TEAM</h1>
+        <div class="team">
+          <div class="team_member">
+            <div class="team_img">
+              <img src="images/soriano.png" alt="Freajane Soriano" />
+            </div>
+            <h3>Freajane Soriano</h3>
+            <p class="role">Project Manager</p>
+            <a href="frdi.soriano.up@phinmaed.com" style="text-decoration: none"
+              >Contact</a
+            >
+          </div>
+          <div class="team_member">
+            <div class="team_img">
+              <img src="images/elgin.png" alt="Elgin Espinoza" />
+            </div>
+            <h3>Elgin Espinoza</h3>
+            <p class="role">Full Stack Developer</p>
+            <a
+              href="eltu.espinoza.up@phinmaed.com"
+              style="text-decoration: none"
+              >Contact</a
+            >
+          </div>
+          <div class="team_member">
+            <div class="team_img">
+              <img src="images/maria.png" alt="Maria Agripina Salomon" />
+            </div>
+            <h3>Maria Agripina Salomon</h3>
+            <p class="role">Front-end Developer</p>
+            <a href="masa.salomon.up@phinmaed.com" style="text-decoration: none"
+              >Contact</a
+            >
+          </div>
+          <div class="team_member">
+            <div class="team_img">
+              <img src="images/reyes.png" alt="John Roe Reyes" />
+            </div>
+            <h3>John Roe Reyes</h3>
+            <p class="role">Back-end Developer</p>
+            <a href="jori.reyes.up@phinmaed.com" style="text-decoration: none"
+              >Contact</a
+            >
+          </div>
+          <div class="team_member">
+            <div class="team_img">
+              <img src="images/asma.png" alt="Joshua Asma" />
+            </div>
+            <h3>Joshua Asma</h3>
+            <p class="role">Researcher</p>
+            <a href="rago.asma.up@phinmaed.com" style="text-decoration: none"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      var navLinks = document.getElementById("navLinks");
+      function showMenu() {
+        navLinks.style.left = "0";
+      }
+      function hideMenu() {
+        navLinks.style.left = "-200px";
+      }
+      var navbar = document.getElementById("navbar");
+      var menu = document.getElementById("menu");
+      window.onscroll = function () {
+        if (window.pageYOffset >= menu.offsetTop) {
+          navbar.classList.add("sticky");
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      };
+    </script>
+  </body>
+</html>

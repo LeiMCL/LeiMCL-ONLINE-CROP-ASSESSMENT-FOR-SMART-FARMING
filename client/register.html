@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="CSS/register.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Sign In</title>
+    <style type="text/css">
+      .header{
+            width: 100%;
+            height: 100px;
+            background-color: #17B169;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            z-index: 1000;
+            }
+
+      #menu {
+        display: flex;
+        flex-direction: row;
+        align-items: right;
+        justify-content: right;
+      }
+
+      #menu > li > a {
+        font-size: 20px;
+      }
+
+      nav {
+        background-color: #17b169;
+      }
+
+
+      .hero{
+	height: 100%;
+	width: 100%;
+	position: sticky;
+
+}
+
+
+.form-box{
+	width: 380px;
+	height: 510px;
+	position: relative;
+	margin: 2% auto;
+	background: #f0f0f0;
+	padding: 5px;
+	overflow: hidden;
+	
+
+}
+.button-box{
+	width: 230px;
+	margin:35px auto;
+	position: relative;
+	box-shadow: 0 0 30px 7px  #17B169;
+	border-radius: 20px;
+
+}
+.toggle-btn{
+	padding: 10px 30px;
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+	outline: none;
+	position: relative;
+}
+#btn{
+	top:0;
+	left:0;
+	position: absolute;
+	width: 110px;
+	height: 100%;
+	background: linear-gradient(to right, #17B169, #f0f0f0 );
+	border-radius: 30px;
+	transition: .5s;
+}
+.input-group{
+	top: 110px;
+	position: absolute;
+	width: 280px;
+	transition:.5s;
+}
+.input-field{
+	width: 100%;
+	padding: 10px 0;
+	margin: 5px 0;
+	border-left: 0;
+	border-top: 0;
+	border-right: 0;
+	border-bottom: 1 px solid #999;
+	outline: none;
+	background: transparent;
+}
+.submit-btn{
+	width: 85%;
+	padding: 10px 30px;
+	cursor: pointer;
+	display: block;
+	margin: 40px auto auto auto;
+	background-color:  #17B169;
+	border: 0;
+	outline: none;
+	color: #f0f0f0;
+  border-radius: 0%;
+
+}
+.check-box{
+	margin: 30px 10px 30px 0;
+}
+span{
+	color:#777;
+	font-size: 12px;
+	bottom: 68px;
+	position: absolute;
+}
+#login{
+	left:50px;
+
+
+}
+#register{
+	left: 450px;
+}
+
+.active {
+	border-bottom: 2px solid #f0f0f0 !important;
+	/* box-shadow: 0px 3px 6px 0px rgba(240, 240, 240, 0.4); */
+}
+
+
+
+
+    </style>
+
+    <!-- Checker if user exist -->
+    <script defer src="./JS/UserControl.js"></script>
+
+    <!-- AXIOS -->
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+      integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <section class="header">
+      <nav id="navbar">
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+
+          <ul id="menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="tutorial.html">CROPS</a></li>
+            <li><a href="#" id="navSignIn">SIGN IN</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+          </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+      <div class="hero">
+        <div class="form-box">
+          <div class="button-box">
+            <div id="btn"></div>
+            <button type="button" class="toggle-btn" onclick="login()">
+              Sign in
+            </button>
+            <button type="button" class="toggle-btn" onclick="register()">
+              Register
+            </button>
+          </div>
+          <form class="input-group" id="login">
+            <input
+              type="text"
+              class="input-field"
+              id="l_username"
+              placeholder="Username"
+              required
+            />
+            <input
+              type="password"
+              class="input-field"
+              id="l_password"
+              placeholder="Enter Password"
+              required
+            /><br /><br />
+            <!-- <input type="checkbox" class="check-box" placeholder="Username"> -->
+            <!-- <span>Remember Password</span> -->
+
+            <button type="submit" class="submit-btn">Log in</button>
+          </form>
+          <form id="register" class="input-group">
+            <input
+              type="text"
+              class="input-field"
+              id="r_name"
+              placeholder="Name"
+              required
+            />
+            <input
+              type="text"
+              class="input-field"
+              id="r_username"
+              placeholder="Username"
+              required
+            />
+            <input
+              type="email"
+              class="input-field"
+              id="r_email"
+              placeholder="Email"
+              required
+            />
+            <input
+              type="password"
+              class="input-field"
+              id="r_password"
+              placeholder="Enter Password"
+              required
+            />
+            <input
+              type="password"
+              class="input-field"
+              id="r_confirm_password"
+              placeholder="Confirm Password"
+              required
+            />
+            <!-- <input type="checkbox" class="check-box" placeholder="Username"> -->
+            <!-- <span>I agree to the terms & conditions.</span> -->
+
+            <button type="submit" class="submit-btn">Register</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- API SCRIPT  -->
+    <script src="./JS/api.js"></script>
+
+    <!-- Controller Script -->
+    <script src="./JS/AuthController.js"></script>
+
+    <script>
+      var navLinks = document.getElementById("navLinks");
+      var x = document.getElementById("login");
+      var y = document.getElementById("register");
+      var z = document.getElementById("btn");
+      var navbar = document.getElementById("navbar");
+      var menu = document.getElementById("menu");
+      function register() {
+        x.style.left = "-400px";
+        y.style.left = "50px";
+        z.style.left = "110px";
+      }
+      function login() {
+        x.style.left = "50px";
+        y.style.left = "450px";
+        z.style.left = "0px";
+      }
+
+      function showMenu() {
+        navLinks.style.left = "0";
+      }
+      function hideMenu() {
+        navLinks.style.left = "-200px";
+      }
+      var navbar = document.getElementById("navbar");
+      var menu = document.getElementById("menu");
+      window.onscroll = function () {
+        if (window.pageYOffset >= menu.offsetTop) {
+          navbar.classList.add("sticky");
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      };
+    </script>
+  </body>
+</html>

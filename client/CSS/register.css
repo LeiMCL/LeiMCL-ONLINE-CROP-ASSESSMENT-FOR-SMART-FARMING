@@ -1,0 +1,172 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', san-serif;
+}
+nav{
+	display: flex;
+	padding: 2% 6%;
+	justify-content: space-between;
+	align-items:center;
+	background-color:#17B169;	
+}
+
+.nav-links{
+	flex:1;
+	text-align: right;
+
+}
+.nav-links ul li{
+	list-style: none;
+	display: inline-block;
+	padding: 8px 12px;
+	position: relative;
+}
+.nav-links ul li a{
+	color: #F0F0F0;
+	text-decoration: none;
+	font-size: 15px;
+
+}
+.nav-links ul li::after{
+	content: '';
+	width: 0%;
+	height: 2px;
+	background: #f0f0f0;
+	display: block;
+	margin: auto;
+	transition:0.5s;
+
+}
+.nav-links ul li:hover::after{
+	width:100%;
+}
+nav .fa{
+	display: none;
+}
+@media(max-width:700px){
+
+	.about-col h1{
+	font-size: 20px;
+	}
+	.nav-links ul li{
+	display:block;
+    }
+    .nav-links{
+    	position: absolute;
+    	background: #17B169;
+    	height: 100vh;
+    	width: 200px;
+    	top: 0;
+    	left: -200px;
+    	text-align: left;
+    	z-index:2;
+    	transition:1s;
+    }
+    nav .fa{
+    	display: block;
+    	color: #f0f0f0;
+    	font-size: 22px;
+    	cursor:pointer;
+    }
+    .nav-links ul{
+    	padding: 30px;
+    }
+}
+
+.hero{
+	height: 100%;
+	width: 100%;
+	position: sticky;
+
+}
+
+
+.form-box{
+	width: 380px;
+	height: 510px;
+	position: relative;
+	margin: 2% auto;
+	background: #f0f0f0;
+	padding: 5px;
+	overflow: hidden;
+	
+
+}
+.button-box{
+	width: 230px;
+	margin:35px auto;
+	position: relative;
+	box-shadow: 0 0 30px 7px  #17B169;
+	border-radius: 20px;
+
+}
+.toggle-btn{
+	padding: 10px 30px;
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+	outline: none;
+	position: relative;
+}
+#btn{
+	top:0;
+	left:0;
+	position: absolute;
+	width: 110px;
+	height: 100%;
+	background: linear-gradient(to right, #17B169, #f0f0f0 );
+	border-radius: 30px;
+	transition: .5s;
+}
+.input-group{
+	top: 110px;
+	position: absolute;
+	width: 280px;
+	transition:.5s;
+}
+.input-field{
+	width: 100%;
+	padding: 10px 0;
+	margin: 5px 0;
+	border-left: 0;
+	border-top: 0;
+	border-right: 0;
+	border-bottom: 1 px solid #999;
+	outline: none;
+	background: transparent;
+}
+.submit-btn{
+	width: 85%;
+	padding: 10px 30px;
+	cursor: pointer;
+	display: block;
+	margin: 40px auto auto auto;
+	background-color:  #17B169;
+	border: 0;
+	outline: none;
+	color: #f0f0f0;
+
+}
+.check-box{
+	margin: 30px 10px 30px 0;
+}
+span{
+	color:#777;
+	font-size: 12px;
+	bottom: 68px;
+	position: absolute;
+}
+#login{
+	left:50px;
+
+
+}
+#register{
+	left: 450px;
+}
+
+.active {
+	border-bottom: 2px solid #f0f0f0 !important;
+	/* box-shadow: 0px 3px 6px 0px rgba(240, 240, 240, 0.4); */
+}

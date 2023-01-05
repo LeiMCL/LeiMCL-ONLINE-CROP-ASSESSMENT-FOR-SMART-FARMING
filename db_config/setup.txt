@@ -1,0 +1,14 @@
+Copy the file to C:\xampp\htdocs
+
+Open XAMPP
+
+Start MySQL and Apache
+
+// Set up database
+Go to http://localhost/phpmyadmin/
+-> create new database
+-> name it db_crop_forum
+-> go to import and import the db_crop_forum.sql
+
+// Go to the Website
+http://localhost/crop_forum/client/
